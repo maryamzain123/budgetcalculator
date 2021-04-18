@@ -1,8 +1,9 @@
 
 <div class="months">
-<b>September</b><br><br/>
+<b>June</b><br><br/>
 <% @entries.each do |entry| %>
-  <% if entry.month=="september" %>
+ 
+  <% if entry.month=="june" %>
     <li>
         <a class="monthlist" href="/entries/<%= entry.id %>" >
          Subject: <%= entry.subject %> 
@@ -11,6 +12,6 @@
   <% end %>
 <% end %>
 </ul>
-<h3 class="amount">Total <i>$</i><%= @september_total%></h3>
+<h3 class>Total <i>$</i><%= @june_total%></h3>
 
 </div>

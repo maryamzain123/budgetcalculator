@@ -20,11 +20,11 @@
   <header>
   <div class="welcome">
     <% if logged_in? %>
-      <h5> Welcome <%= current_user.name%> </h5>
+      <h5> Welcome <%= current_user.name%>! </h5>
       
       <a class="topnav" href="/logout" > Logout </a>
       <a class="topnav" href="/entries/monthlist" > Monthly Report </a>
-      <a class="topnav" href="/entries/new" > Add a new entry </a>
+      <a class="topnav" href="/entries/new" > New Entry </a>
       <a class="topnav" href="/entries" > Your Account </a>
       <% else %>
       <a class="topnav" href="/signup" > Sign up </a>
