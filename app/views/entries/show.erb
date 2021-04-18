@@ -1,0 +1,20 @@
+
+<body>
+<a class="topnav" href="/entries" > Monthly Entries </a>
+<a class="topnav" href="/entries/<%= @entry.id %>/edit" > Edit </a>
+
+<br><br>
+<div class="show">
+
+    <h3 class="subject"><%= @entry.subject %></h3>
+    <h3 class="description"><%= @entry.details %></h3>
+    <h3 class="amount">Total: <i>$</i><%= @entry.amount %></h3>
+
+    <form method="POST" action="/entries/<%= @entry.id %>">
+<input  type="hidden" id="hidden" name="_method" value="DELETE">
+<input class="delete" type="submit" value="DELETE">
+</form>
+    
+</div>
+
+</body>

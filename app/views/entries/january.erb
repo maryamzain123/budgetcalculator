@@ -1,0 +1,16 @@
+<h1 class="monthtitle"> January</h1>
+<div class="months">
+<% @entries.each do |entry| %>
+
+  <% if entry.month=="January" %>
+    <li>
+        <a class="monthlist" href="/entries/<%= entry.id %>" >
+         Subject: <%= entry.subject %> 
+    </a> </li><br>
+    
+  <% end %>
+<% end %>
+</ul>
+<h3 class="amount">Total <i>$</i><%= @january_total%></h3>
+
+</div>

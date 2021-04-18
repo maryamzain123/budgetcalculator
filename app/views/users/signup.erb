@@ -1,0 +1,17 @@
+  
+<% if @user && @user.errors %>
+<% @user.errors.full_messages.each do | error | %>
+    <h6> <%= error %></h6>
+<% end %>
+<% end %>
+
+
+<h1 class="title">Create Account</h1>
+
+<form class="form1" method="POST" action="/users">
+
+Name:<input class="un " type="text" name="name"><br />
+Username:<input class="un " type="text" name="username"><br />
+ Password:<input class="pass" type="password" name="password"><br />
+<input class="submit" type="submit">
+</form>

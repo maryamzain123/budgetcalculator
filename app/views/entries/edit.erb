@@ -1,0 +1,19 @@
+<h1 class="title"> Edit your Entry</h1>
+
+
+
+<form class="form1" method="POST" action="/entries/<%= @entry.id %>">
+    
+        <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+    Category: <input class="un" type="text" name="subject" value="<%= @entry.subject %>"<br />
+    <br>Details: <input class="un" type="text" name="details" value="<%= @entry.details %>"<br />
+    <br>Amount: <input class="un" type="text" name="amount" value="<%= @entry.amount %>"<br /><br>
+    Month:<input  class="un" type="text" name="month"><br />
+    <input class="submit" type="submit">
+
+
+
+
+
+</form>
