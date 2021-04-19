@@ -6,11 +6,13 @@
   <% if entry.month=="january" %>
     <li>
         <a class="monthlist" href="/entries/<%= entry.id %>" >
-         Subject: <%= entry.subject %> 
+         Subject: <%= entry.subject %>
+         <a class="monthlist" href="/entries/<%= entry.id %>/edit" >edit</a>
     </a> </li><br>
     
   <% end %>
 <% end %>
+
 </ul>
 <h3>Total <i>$</i><%= @january_total%></h3>
 

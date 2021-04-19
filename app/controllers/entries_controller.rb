@@ -1,9 +1,12 @@
 class EntriesController < ApplicationController
 
     get "/entries" do
+        
         if logged_in?
+            
+            # binding.pry
         @entries = Entry.all
-        @total = @entries.map {|ent| ent.amount}.sum
+        @user_total =  current_user.entries.map {|ent| ent.amount}.sum
         erb :"entries/index" 
         else 
             redirect "/login"
@@ -105,6 +108,7 @@ class EntriesController < ApplicationController
 
     post "/entries" do
         entry = Entry.new(params)
+        entry.user_id = current_user.id
         if entry.save 
             redirect "entries/#{entry.id}"
         else
