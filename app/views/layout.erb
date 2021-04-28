@@ -14,11 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
-  </head>
-  <body>
+    </head>
+    <body>
     <div class="wrapper">
-  <header>
-  <div class="welcome">
+    
+   
+   <header>
+    <div class="welcome">
     <% if logged_in? %>
       <h5> Welcome <%= current_user.name%>! </h5>
       
@@ -31,12 +33,12 @@
       <a class="topnav" href="/login" > Login </a>
       <% end %>
     </header>
+    <%= yield %>
 
-        <%= yield %>
-        <footer class="branding">
-        <small>&copy; 2021 <strong>Budgetcalculator</strong></small>
-      </footer>
-    </div>
+  <footer class="branding">
+    <small>&copy; 2021 <strong>Budgetcalculator</strong></small>
+   </footer>
+   </div>
     
   
 

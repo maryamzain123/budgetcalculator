@@ -3,8 +3,6 @@ class EntriesController < ApplicationController
     get "/entries" do
         
         if logged_in?
-            
-            # binding.pry
         @entries = Entry.all
         @user_total =  current_user.entries.map {|ent| ent.amount}.sum
         erb :"entries/index" 
@@ -98,9 +96,6 @@ class EntriesController < ApplicationController
         erb :"entries/december"
     end
 
-
-    
-
     get "/entries/:id" do
         @entry = Entry.find_by_id(params[:id])
         erb :"entries/show"
@@ -120,24 +115,24 @@ class EntriesController < ApplicationController
     get "/entries/:id/edit" do
         if logged_in?
             @entry = Entry.find_by_id(params[:id])
-            if @entry.user_id != current_user.id || @entry.user_id == nil
-        erb :"entries/edit"
-        else
-        redirect "/login"
-    end
-    end
+            if @entry.user_id = current_user.id
+                erb :"entries/edit"
+            else
+                redirect "/login"
+            end
+        end
     end
 
     patch "/entries/:id" do
-        @entry = Entry.find_by_id(params[:id])
-            params.delete("_method")
-        @entry.update(params)
-        if @entry.update(params) 
-            redirect "/entries/#{@entry.id}"
-        else
-            redirect "entries/new"
-        end
-    end
+         @entry = Entry.find_by_id(params[:id])
+         params.delete("_method")
+         @entry.update(params)
+         if @entry.update(params)
+             redirect "/entries/#{@entry.id}"
+             else
+                 redirect "entries/new"
+                end
+     end
 
     delete "/entries/:id" do
         @entry = Entry.find_by_id(params[:id])

@@ -2,7 +2,7 @@ Entry.destroy_all
 User.destroy_all
 
 
-5.times do
+25.times do
 
 
     User.create(name: Faker::JapaneseMedia::Naruto.character, 
@@ -12,14 +12,14 @@ User.destroy_all
 end
 
 
-months=["January", "February", "March", "April", "May", "June", "July",
+month=["January", "February", "March", "April", "May", "June", "July",
 "August", "September", "October", "November", "December"]
 
 25.times do
 
     Entry.create(subject:Faker::Company.name,
-   details:Faker::Appliance.equipment,
-    months: month.sample,
+    details:Faker::Appliance.equipment,
+    month: month.sample,
     user: User.all.sample,
     amount:Faker::Number.decimal(r_digits: 2, l_digits:1 ))
 
